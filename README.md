@@ -1,3 +1,14 @@
+# 김준혁 | 제조 현장 기반 Web MES 개발자
+
+C# 기반 현장 시스템 경험을 바탕으로 Java(Spring Boot)·React 기반 Web MES로 확장해 온 개발자입니다.  
+설비(PLC/SCADA) 데이터 처리와 생산 실적 정합, 모니터링 대시보드 구축에 집중해 왔습니다.
+
+- Tech: Java · Spring Boot · React · SQL Server · MongoDB
+- Domain: MES · PLC/SCADA · Equipment Monitoring
+- GitHub: 본 저장소는 보안상 코드 대신 **구조·설계·문제 해결 방식** 중심으로 정리했습니다.
+
+---
+
 # Web MES Projects Showcase
 
 제조 현장 데이터를 **Web 기반으로 연결하고 운영**하기 위한  
