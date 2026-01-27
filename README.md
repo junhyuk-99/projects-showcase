@@ -7,9 +7,14 @@ C# 기반 현장 시스템 경험을 바탕으로 Java(Spring Boot)·React 기�
 - Domain: MES · PLC/SCADA · Equipment Monitoring
 - GitHub: 본 저장소는 보안상 코드 대신 **구조·설계·문제 해결 방식** 중심으로 정리했습니다.
 
+## Quick Links
+- NWM – Billet Tracking / Count Matching: [`/nwm`](./nwm)
+- MGO – Equipment Operation Monitoring (MON): [`/mgo`](./mgo)
+- In-house Dashboard (Ongoing): [`/dashboard`](./dashboard)
+
 ---
 
-# Web MES Projects Showcase
+## Web MES Projects Showcase (NWM / MGO)
 
 제조 현장 데이터를 **Web 기반으로 연결하고 운영**하기 위한  
 MES 및 설비 모니터링 프로젝트들을 정리한 저장소입니다.
