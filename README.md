@@ -1,4 +1,4 @@
-# 김준혁 | 제조 현장 기반 Web MES 개발자
+# 김준혁 | Web MES 개발자
 
 C# 기반 현장 시스템 경험을 바탕으로 Java(Spring Boot)·React 기반 Web MES로 확장해 온 개발자입니다.  
 설비(PLC/SCADA) 데이터 처리와 생산 실적 정합, 모니터링 대시보드 구축에 집중해 왔습니다.
@@ -11,6 +11,7 @@ C# 기반 현장 시스템 경험을 바탕으로 Java(Spring Boot)·React 기�
 - NWM – Billet Tracking / Count Matching: [`/nwm`](./nwm)
 - MGO – Equipment Operation Monitoring (MON): [`/mgo`](./mgo)
 - In-house Dashboard (Ongoing): [`/dashboard`](./dashboard)
+
 
 ---
 
