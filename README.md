@@ -1,3 +1,9 @@
+## What this repository focuses on
+- 시스템 구조(다이어그램) 및 핵심 설계 의도
+- 현장 기준을 시스템 로직으로 녹여낸 설계 방식
+- 민감정보를 제거한 SQL 구조 예시
+- 운영 관점에서의 UI/데이터 흐름 개선 포인트
+
 # Web MES Projects Showcase (NWM / MGO)
 
 제조 현장 데이터를 Web 기반으로 연결하고 운영하기 위한 프로젝트들을 정리한 저장소입니다.  
@@ -38,4 +44,6 @@ PLC/SCADA → DB(SQL Server) → Spring Boot API → React Client
 - Domain: MES, PLC, SCADA
 
 ## Notes
-본 저장소는 포트폴리오 목적의 공개 자료로, 회사 자산/민감정보는 포함하지 않습니다.
+본 저장소는 포트폴리오 목적의 공개 자료로,
+실제 서비스에 사용된 소스 코드는 보안 및 회사 정책에 따라 공개하지 않습니다.
+대신 시스템 구조, 설계 의도, 문제 해결 방식 위주로 정리했습니다.
