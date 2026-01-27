@@ -1,4 +1,4 @@
-# Web MES Projects Showcase (NWM / MGO)
+# Web MES Projects Showcase
 
 제조 현장 데이터를 **Web 기반으로 연결하고 운영**하기 위한  
 MES 및 설비 모니터링 프로젝트들을 정리한 저장소입니다.
