@@ -38,7 +38,7 @@ PLC / SCADA → DB (SQL Server) → Spring Boot API → React Client
 - LOT 입력 지연·누락 상황에서도 이력 공백이 발생하지 않도록 설계
 - 설비 카운트 기반 자동 집계 및 시간 스트림(RN) 매칭 구조 적용
 
-📁 `/nwm`
+📁 Details: [/nwm](./nwm)
 
 ---
 
@@ -48,7 +48,7 @@ PLC / SCADA → DB (SQL Server) → Spring Boot API → React Client
 - 설비 상태 및 주요 지표를 Web에서 실시간으로 확인 가능한 구조 설계
 - 현장·관리자 간 설비 정보 공유 및 대응 흐름 개선
 
-📁 `/mgo`
+📁 Details: [/mgo](./mgo)
 
 ---
 
@@ -58,7 +58,7 @@ PLC / SCADA → DB (SQL Server) → Spring Boot API → React Client
 - MongoDB 기반 데이터 모델을 적용한 대시보드 구조 설계
 - 설비 상태 및 주요 운영 지표를 통합 조회할 수 있는 Web 대시보드 개발 중
 
-📁 `(Private / In Progress)`
+📁 Details: [/dashboard](./dashboard)
 
 ---
 
