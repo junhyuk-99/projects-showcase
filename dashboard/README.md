@@ -1,12 +1,12 @@
 # In-house Dashboard – Equipment & Operation Overview (Ongoing)
 
 설비 및 운영 데이터를 Web 기반으로 한눈에 확인할 수 있도록  
-**단독으로 설계·개발을 진행한 내부 대시보드 프로젝트**입니다.
+**기획부터 설계·개발까지 단독으로 진행한 내부 대시보드 프로젝트**입니다.
 
-기존 회사 표준이었던 MSSQL 기반 구조에서 벗어나,  
+기존 회사 표준이던 MSSQL 중심 구조에서 벗어나,  
 설비 데이터를 **MongoDB로 수집·저장**하고  
-Java 서버에서 **MongoDB를 새롭게 연동하여 API를 구성**,  
-해당 API를 기반으로 **클라이언트 UI까지 직접 개발**했습니다.
+Java 서버에서 **MongoDB를 새롭게 연동해 API를 구성**,  
+해당 API를 기반으로 **클라이언트 UI까지 직접 구현**했습니다.
 
 > 본 문서와 화면은 실무 프로젝트를 기반으로 하며,  
 > 보안 정책에 따라 일부 정보는 마스킹 처리되었습니다.
@@ -38,6 +38,7 @@ Equipment Data → MongoDB → Java Server (MongoDB 연동 / API 제공) → Web
 - 설비 데이터를 MongoDB 컬렉션으로 수집·관리
 - Java 서버에서 MongoDB를 직접 연동하여 집계 및 조회 API 구현
 - 클라이언트에서는 API 호출을 통해 설비 상태 및 지표를 화면에 표현
+- 지표 추가 시 스키마 변경 부담을 최소화할 수 있도록 NoSQL 구조 활용
 
 ---
 
@@ -71,6 +72,7 @@ Equipment Data → MongoDB → Java Server (MongoDB 연동 / API 제공) → Web
 - Java 서버에 MongoDB 연동 구조 신규 적용
 - 설비 상태 판단 기준 정의 및 집계 API 구현
 - API 기반 데이터 흐름을 고려한 클라이언트 UI 개발
+- 운영 흐름을 고려한 화면 구성 및 정보 배치 설계
 
 ---
 
