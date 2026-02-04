@@ -1,5 +1,8 @@
 # In-house Dashboard – Equipment & Operation Overview (Ongoing)
 
+> **MongoDB 기반 설비 모니터링 Web Dashboard**
+> 기획 · 설계 · 백엔드 · 프론트엔드까지 **단독으로 설계 및 구현한 실무 프로젝트**
+
 설비 및 운영 데이터를 **Web 기반으로 한눈에 확인**할 수 있도록
 기획부터 설계·개발까지 **단독으로 진행한 내부 대시보드 프로젝트**입니다.
 
@@ -50,13 +53,51 @@ Java Server (MongoDB 연동 / API 제공)
 
 ---
 
+## Why MongoDB
+
+* 설비 데이터 특성상 **스키마가 자주 변경되고 지표가 지속적으로 추가**됨
+* 기존 MSSQL 구조에서는 컬럼 추가 및 프로시저 수정 비용이 큼
+* MongoDB를 통해
+
+  * 설비별 / 신호별 데이터 구조를 유연하게 수용
+  * 지표 추가 시 서버·DB 구조 변경 최소화
+  * 실시간성 데이터와 집계 데이터 분리 관리 가능
+
+---
+
 ## Screenshots
 
 ### Home Dashboard
 
 전체 설비 운영 현황을 요약해 보여주는 홈 화면입니다.
 
+* 설비 가동 상태 요약
+* 주요 운영 지표 빠른 확인
+
 ![Home Overview](./screenshots/HOME-Overview.png)
+
+---
+
+### Integrated Utilization & Equipment Status
+
+설비 통합 가동률과 개별 설비 상태를 동시에 모니터링할 수 있는 화면입니다.
+
+* 설비별 가동/비가동 상태 표시
+* 전체 설비 가동률 현황 시각화
+
+![Status View 01](./screenshots/status-view01.png)
+![Status View 02](./screenshots/status-view02.png)
+
+---
+
+### Trend View
+
+설비 및 운영 지표의 시간 흐름에 따른 변화를 확인할 수 있는 트렌드 화면입니다.
+
+* 일/월 단위 설비 지표 변화 확인
+* 설비 간 지표 비교 가능
+
+![Trend View](./screenshots/chart-view01.png)
 
 ---
 
@@ -82,6 +123,7 @@ Java Server (MongoDB 연동 / API 제공)
 * MongoDB 기반 데이터 모델 및 컬렉션 구조 **단독 설계**
 * Java 서버에 MongoDB 연동 구조 **신규 적용**
 * 설비 상태 판단 기준 정의 및 집계 API 구현
+* 실시간/누적 데이터를 고려한 API 설계
 * API 기반 데이터 흐름을 고려한 클라이언트 UI 개발
 * 운영자 관점에서 빠르게 파악 가능한 화면 구성 및 정보 배치 설계
 
@@ -97,7 +139,7 @@ Java Server (MongoDB 연동 / API 제공)
 
 ## Tech Stack
 
-* **Backend**: Java
+* **Backend**: Java (MongoDB Direct Integration)
 * **Database**: MongoDB
 * **Frontend**: Web Client UI
 * **Domain**: Equipment Monitoring / Operational Dashboard
