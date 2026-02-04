@@ -101,23 +101,6 @@ Java Server (MongoDB 연동 / API 제공)
 
 ---
 
-### Integrated Utilization & Equipment Status
-
-설비 통합 가동률과 개별 설비 상태를 동시에 모니터링할 수 있는 화면입니다.
-
-![Status View 01](./screenshots/status-view01.png)
-![Status View 02](./screenshots/status-view02.png)
-
----
-
-### Trend View
-
-설비 및 운영 지표의 시간 흐름에 따른 변화를 확인할 수 있는 트렌드 화면입니다.
-
-![Trend View](./screenshots/chart-view01.png)
-
----
-
 ## What I Did
 
 * MongoDB 기반 데이터 모델 및 컬렉션 구조 **단독 설계**
