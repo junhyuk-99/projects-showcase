@@ -1,100 +1,111 @@
 # In-house Dashboard – Equipment & Operation Overview (Ongoing)
 
-설비 및 운영 데이터를 Web 기반으로 한눈에 확인할 수 있도록  
-**기획부터 설계·개발까지 단독으로 진행한 내부 대시보드 프로젝트**입니다.
+설비 및 운영 데이터를 **Web 기반으로 한눈에 확인**할 수 있도록
+기획부터 설계·개발까지 **단독으로 진행한 내부 대시보드 프로젝트**입니다.
 
-기존 회사 표준이던 MSSQL 중심 구조에서 벗어나,  
-설비 데이터를 **MongoDB로 수집·저장**하고  
-Java 서버에서 **MongoDB를 새롭게 연동해 API를 구성**,  
+기존 회사 표준이던 **MSSQL 중심 구조에서 탈피**하여,
+설비 데이터를 **MongoDB로 수집·저장**하고
+Java 서버에서 **MongoDB를 직접 연동해 API를 구성**,
 해당 API를 기반으로 **클라이언트 UI까지 직접 구현**했습니다.
 
-> 본 문서와 화면은 실무 프로젝트를 기반으로 하며,  
+> 본 문서와 화면은 실무 프로젝트를 기반으로 하며,
 > 보안 정책에 따라 일부 정보는 마스킹 처리되었습니다.
 
 ---
 
 ## Background
 
-- 기존 시스템은 MSSQL 중심 구조로,
-  대시보드 특성상 필요한 실시간 조회 및 지표 확장에 제약이 있었음
-- 설비 상태 확인을 위해 여러 화면과 데이터를 반복적으로 확인해야 했음
-- 운영 현황을 빠르게 파악할 수 있는 별도의 대시보드 구조가 필요하다고 판단
+* 기존 시스템은 MSSQL 중심 구조로,
+  대시보드 특성상 실시간 조회 및 지표 확장에 제약이 존재
+* 설비 상태 확인을 위해 여러 화면을 반복적으로 확인해야 하는 불편함
+* 운영 현황을 직관적으로 파악할 수 있는 **통합 대시보드 필요성 대두**
 
 ---
 
 ## Objective
 
-- 설비 상태를 즉각적으로 파악할 수 있는 대시보드 구성
-- 실시간 데이터와 누적 데이터를 함께 확인 가능한 구조 설계
-- 기존 RDB 의존도를 낮추고,
-  지표 확장에 유연한 데이터 저장·조회 구조 적용
+* 설비 상태 및 운영 현황을 **즉각적으로 파악**할 수 있는 대시보드 제공
+* 실시간 데이터와 누적 데이터를 **동시에 확인 가능한 구조 설계**
+* 기존 RDB 의존도를 낮추고,
+  **지표 확장에 유연한 데이터 저장·조회 구조** 적용
 
 ---
 
 ## Architecture
 
-Equipment Data → MongoDB → Java Server (MongoDB 연동 / API 제공) → Web Client UI
+```
+Equipment Data
+      ↓
+   MongoDB
+      ↓
+Java Server (MongoDB 연동 / API 제공)
+      ↓
+ Web Client UI
+```
 
-- 설비 데이터를 MongoDB 컬렉션으로 수집·관리
-- Java 서버에서 MongoDB를 직접 연동하여 집계 및 조회 API 구현
-- 클라이언트에서는 API 호출을 통해 설비 상태 및 지표를 화면에 표현
-- 지표 추가 시 스키마 변경 부담을 최소화할 수 있도록 NoSQL 구조 활용
+* 설비 데이터를 MongoDB 컬렉션 단위로 수집·관리
+* Java 서버에서 MongoDB를 직접 연동하여 집계 및 조회 API 구현
+* 클라이언트는 API 기반으로 설비 상태 및 지표 시각화
+* NoSQL 구조를 활용하여 지표 추가 시 스키마 변경 부담 최소화
 
 ---
 
 ## Screenshots
 
-### Equipment Status Overview
-설비별 가동 상태를 한눈에 확인할 수 있도록 구성된 화면입니다.
+### Home Dashboard
 
-![Equipment Status 01](./screenshots/equipment-status01.png)
-![Equipment Status 02](./screenshots/equipment-status02.png)
+전체 설비 운영 현황을 요약해 보여주는 홈 화면입니다.
 
----
-
-### Alarm / Abnormal Status
-설비 이상 상태를 빠르게 인지할 수 있도록 구성한 화면입니다.
-
-![Alarm View](./screenshots/alarm.png)
+![Home Overview](./screenshots/HOME-Overview.png)
 
 ---
 
-### Chart / Trend View
-설비 및 운영 지표의 변화 추이를 확인하기 위한 차트 화면입니다.
+### Integrated Utilization & Equipment Status
 
-![Chart View](./screenshots/chart-view.png)
+설비 통합 가동률과 개별 설비 상태를 동시에 모니터링할 수 있는 화면입니다.
+
+![Status View 01](./screenshots/status-view01.png)
+![Status View 02](./screenshots/status-view02.png)
+
+---
+
+### Trend View
+
+설비 및 운영 지표의 시간 흐름에 따른 변화를 확인할 수 있는 트렌드 화면입니다.
+
+![Trend View](./screenshots/chart-view01.png)
 
 ---
 
 ## What I Did
 
-- MongoDB 기반 데이터 모델 및 컬렉션 구조 단독 설계
-- Java 서버에 MongoDB 연동 구조 신규 적용
-- 설비 상태 판단 기준 정의 및 집계 API 구현
-- API 기반 데이터 흐름을 고려한 클라이언트 UI 개발
-- 운영 흐름을 고려한 화면 구성 및 정보 배치 설계
+* MongoDB 기반 데이터 모델 및 컬렉션 구조 **단독 설계**
+* Java 서버에 MongoDB 연동 구조 **신규 적용**
+* 설비 상태 판단 기준 정의 및 집계 API 구현
+* API 기반 데이터 흐름을 고려한 클라이언트 UI 개발
+* 운영자 관점에서 빠르게 파악 가능한 화면 구성 및 정보 배치 설계
 
 ---
 
 ## Considerations
 
-- 지표 추가 시 기존 구조 변경을 최소화할 수 있도록 설계
-- 실시간 조회 성능과 집계 성능 간의 균형 고려
-- 운영자 관점에서 빠르게 상황을 파악할 수 있는 화면 구성
+* 지표 추가 시 기존 구조 변경을 최소화할 수 있도록 설계
+* 실시간 조회 성능과 집계 성능 간의 균형 고려
+* 현장 운영자가 한눈에 상황을 인지할 수 있는 UX 지향
 
 ---
 
 ## Tech Stack
 
-- Backend: Java
-- Database: MongoDB
-- Frontend: Web Client UI
-- Domain: Equipment Monitoring / Dashboard
+* **Backend**: Java
+* **Database**: MongoDB
+* **Frontend**: Web Client UI
+* **Domain**: Equipment Monitoring / Operational Dashboard
 
 ---
 
 ## Status
 
-- In Progress  
-- 기본 구조 및 데이터 흐름은 구성 완료,  
-  운영 요구사항에 따라 기능을 순차적으로 확장 중입니다.
+* **In Progress**
+* 기본 구조 및 데이터 흐름 구성 완료
+* 운영 요구사항에 따라 기능을 순차적으로 확장 중
