@@ -47,3 +47,9 @@ React Web Client
 | Frontend | React |
 | Database | SQL Server, MongoDB |
 | Domain | 실시간 모니터링, 데이터 대시보드 |
+
+---
+
+## Contact
+
+- Email : bjkdssjun@naver.com
