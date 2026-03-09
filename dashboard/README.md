@@ -1,5 +1,5 @@
 # In-house Dashboard – Equipment & Operation Overview
-MongoDB 기반 설비·운영 데이터 통합 대시보드 (단독 개발, 진행 중)
+MongoDB 기반 설비·운영 데이터 통합 대시보드
 
 기획부터 설계·백엔드·프론트엔드까지 **단독으로 진행한 프로젝트**입니다.
 
