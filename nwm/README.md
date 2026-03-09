@@ -65,7 +65,7 @@ LOT 입력이 지연되거나 누락되면 **이력에 공백**이 생기는 문
 ### 설비 가동 모니터링
 설비별 가동/정지 시간 및 가동률을 시계열로 확인할 수 있는 실시간 모니터링 화면
 
-![설비 가동 모니터링](./screenshots/equipment-monitoring.png)
+![설비 가동 모니터링](./screenshots/StatusMonitor.png)
 
 ---
 
