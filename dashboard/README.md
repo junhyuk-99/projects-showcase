@@ -1,5 +1,5 @@
-# WNEK CNC/MCT Data Gateway, Analytics Server
-MongoDB 기반 CNC/MCT 설비 데이터 수집·모니터링·분석 대시보드 (단독 개발)
+# CNC/MCT Data Gateway, Analytics Server
+MongoDB 기반 CNC/MCT 설비 데이터 수집·모니터링·분석 대시보드
 
 기획부터 설계·백엔드·프론트엔드까지 **단독으로 진행한 프로젝트**입니다.
 
